@@ -46,12 +46,14 @@
                               </div>
                               <div class="footer__links-content">
                                   <ul class="footer__linklist">
-                                      <li class="footer__linklist-item"> <a href="about.php">About Us</a>
+                                      <li class="footer__linklist-item"> <a href="<?php echo DOMAIN; ?>/">Home</a>
                                       </li>
-                                      <li class="footer__linklist-item"> <a href="Cources.php">Cources</a>
+                                      <li class="footer__linklist-item"> <a href="<?php echo DOMAIN; ?>/about-traderz-den">About Us</a>
+                                      </li>
+                                      <li class="footer__linklist-item"> <a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den">Cources</a>
                                       </li>
                                       <!-- <li class="footer__linklist-item"> <a href="service.html">Services</a> </li> -->
-                                      <li class="footer__linklist-item"> <a href="contact.php">Contact Us</a>
+                                      <li class="footer__linklist-item"> <a href="<?php echo DOMAIN; ?>/contacts-us">Contact Us</a>
                                       </li>
                                   </ul>
                               </div>
@@ -83,10 +85,10 @@
                               </div>
                               <div class="footer__links-content">
                                   <ul class="footer__linklist">
-                                      <li class="footer__linklist-item"><a href="#">Technical & Fundamental Analysis</a></li>
-                                      <li class="footer__linklist-item"><a href="#">Trade Management & Risk Management</a></li>
-                                      <li class="footer__linklist-item"><a href="#">Understanding Cryptocurrencies</a></li>
-                                      <li class="footer__linklist-item"><a href="#">Live Trading Sessions</a></li>
+                                      <li class="footer__linklist-item"><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/beginner-to-advance">Beginner To Advance</a></li>
+                                      <li class="footer__linklist-item"><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/make-money-at-home">Make Money At Home</a></li>
+                                      <li class="footer__linklist-item"><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/ultimate-program">Ultimate Program</a></li>
+                                      <li class="footer__linklist-item"><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/one-on-one-mentorship-program">One To One Mentorship</a></li>
                                   </ul>
                               </div>
                           </div>

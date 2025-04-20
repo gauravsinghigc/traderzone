@@ -4,7 +4,7 @@
              <div class="header-wrapper">
                  <div class="logo">
                      <a href="<?php echo DOMAIN; ?>">
-                         <img class="logo" src="<?php echo WEBSITE_INFO['LOGOS']['SQAURE']; ?>" alt="<?php echo WEBSITE_INFO['PRIMARY_INFO']['WEBSITE_FULL_NAME']; ?>">
+                         <img class="logo" src="<?php echo WEBSITE_INFO['LOGOS']['LOADER']; ?>" alt="<?php echo WEBSITE_INFO['PRIMARY_INFO']['WEBSITE_FULL_NAME']; ?>">
                      </a>
                  </div>
                  <div class="menu-area">
@@ -17,9 +17,15 @@
                          </li>
                          <li>
                              <a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den">Courses</a>
+                             <ul class="submenu">
+                                 <li><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/beginner-to-advance">Beginner To Advance Course</a></li>
+                                 <li><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/make-money-at-home">Make Money At Home</a></li>
+                                 <li><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/ultimate-program">Ultimate Program</a></li>
+                                 <li><a href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/one-on-one-mentorship-program">One To One Mentorship</a></li>
+                             </ul>
                          </li>
                          <li>
-                             <a href="contact.html">Contact Us</a>
+                             <a href="<?php echo DOMAIN; ?>/contacts-us">Contact Us</a>
                          </li>
                      </ul>
 
@@ -28,7 +34,7 @@
                      <div class="menu-area">
                          <div class="header-btn">
                              <a href="<?php echo DOMAIN; ?>/login-at-traderz-den" class="trk-btn trk-btn--border trk-btn--primary">
-                                 <span>Call Now</span>
+                                 <span class="text-white"><i class="fa fa-sign-in"></i> Login Now</span>
                              </a>
                          </div>
 

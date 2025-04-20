@@ -8,11 +8,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Custom Pop-up Styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      max-width: 400px;
+      text-align: center;
+    }
 
+    .popup.show {
+      display: block;
+    }
+
+    .popup .btn-close {
+      margin-top: 10px;
+    }
+
+    /* Overlay to dim background */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .popup-overlay.show {
+      display: block;
+    }
+  </style>
   <?php include_once __DIR__ . "/assets/HeaderFiles.php"; ?>
 </head>
 
 <body>
+  <!-- Pop-up Overlay -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+
+  <!-- Pop-up Div -->
+  <div class="popup" id="successPopup">
+    <h5>Thank You!</h5>
+    <p>Thank you for submitting your query! We will contact you as soon as possible.</p>
+    <button type="button" class="btn btn-primary btn-close" onclick="hidePopup()"></button>
+  </div>
   <?php
   include_once __DIR__ . "/include/MainLoader.php";
   include_once __DIR__ . "/include/MainHeader.php";
@@ -377,90 +426,67 @@
     </div>
     <div class="container">
       <div class="service__wrapper">
-        <div class="row g-4 align-items-center justify-content-between  ">
-          <div class="col-sm-6 col-md-6 col-lg-4">
+        <div class="row g-4 align-items-center justify-content-between">
+          <div class="col-sm-6 col-md-6 col-lg-6">
             <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="800">
               <div class="service__item-inner text-center">
                 <div class="service__item-thumb mb-30">
                   <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/1.png" alt="service-icon">
                 </div>
                 <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html">Beginner to Advanced</a> </h5>
+                  <h6>Traderz Den's</h6>
+                  <h5>
+                    <a class="stretched-link" href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/beginner-to-advance">Beginner to Advanced</a>
+                  </h5>
                   <p class="mb-0">Become a pro trader, join us Online/Offline, and trade live with mentors.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-lg-6">
             <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="1000">
               <div class="service__item-inner text-center">
                 <div class="service__item-thumb mb-30">
                   <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/2.png" alt="service-icon">
                 </div>
                 <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html"> Make Money at Home</a> </h5>
+                  <h6>Traderz Den's</h6>
+                  <h5> <a class="stretched-link" href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/make-money-at-home"> Make Money at Home</a> </h5>
                   <p class="mb-0">Self-paced course with pre-recorded content + weekly Friday Google Meet Q&A Sessions.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-lg-6">
             <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="1200">
               <div class="service__item-inner text-center">
                 <div class="service__item-thumb mb-30">
                   <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/3.png" alt="service-icon">
                 </div>
                 <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html">Ultimate Program</a> </h5>
+                  <h6>Traderz Den's</h6>
+                  <h5> <a class="stretched-link" href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/ultimate-program">Ultimate Program</a> </h5>
                   <p class="mb-0">Take your trading to the next level with our most comprehensive program.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-lg-6">
             <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="800">
               <div class="service__item-inner text-center">
                 <div class="service__item-thumb mb-30">
                   <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/4.png" alt="service-icon">
                 </div>
                 <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html">1-on-1 Mentorship Program </a>
+                  <h6>Traderz Den's</h6>
+                  <h5> <a class="stretched-link" href="<?php echo DOMAIN; ?>/courses-offer-by-traderz-den/one-on-one-mentorship-program">1-on-1 Mentorship Program </a>
                   </h5>
                   <p class="mb-0">An elite, personalized training experience, available online & offline.</p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div class="col-sm-6 col-lg-4">
-            <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="1000">
-              <div class="service__item-inner text-center">
-                <div class="service__item-thumb mb-30">
-                  <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/5.png" alt="service-icon">
-                </div>
-                <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html">HR consulting</a> </h5>
-                  <p class="mb-0">Hey guys, just a quick update on exchange orders. There have been some changes
-                    currency!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="service__item service__item--style1" data-aos="fade-up" data-aos-duration="1200">
-              <div class="service__item-inner text-center">
-                <div class="service__item-thumb mb-30">
-                  <img class="dark" src="<?php echo STORAGE_URL; ?>/images/service/6.png" alt="service-icon">
-                </div>
-                <div class="service__item-content">
-                  <h5> <a class="stretched-link" href="service-details.html">Marketing consulting</a>
-                  </h5>
-                  <p class="mb-0">Hey! Just wanted to let you know that the price notification module processes is now
-                    live!</p>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -614,7 +640,7 @@
                     </ul>
                   </div>
                   <div class="pricing__item-bottom">
-                    <a href="signup.html" class="trk-btn trk-btn--outline">Choose Plan</a>
+                    <a href="<?php echo DOMAIN; ?>/login-at-traderz-den" class="trk-btn trk-btn--outline">Choose Plan</a>
                   </div>
                 </div>
               </div>
@@ -642,7 +668,7 @@
                     </ul>
                   </div>
                   <div class="pricing__item-bottom">
-                    <a href="signup.html" class="trk-btn trk-btn--outline active">Choose Plan</a>
+                    <a href="<?php echo DOMAIN; ?>/login-at-traderz-den" class="trk-btn trk-btn--outline active">Choose Plan</a>
                   </div>
                 </div>
               </div>
@@ -671,7 +697,7 @@
                     </ul>
                   </div>
                   <div class="pricing__item-bottom">
-                    <a href="signup.html" class="trk-btn trk-btn--outline">Choose Plan</a>
+                    <a href="<?php echo DOMAIN; ?>/login-at-traderz-den" class="trk-btn trk-btn--outline">Choose Plan</a>
                   </div>
                 </div>
               </div>
@@ -699,7 +725,7 @@
                     </ul>
                   </div>
                   <div class="pricing__item-bottom">
-                    <a href="signup.html" class="trk-btn trk-btn--outline">Choose Plan</a>
+                    <a href="<?php echo DOMAIN; ?>/login-at-traderz-den" class="trk-btn trk-btn--outline">Choose Plan</a>
                   </div>
                 </div>
               </div>
@@ -1061,14 +1087,30 @@
 
   <?php include_once __DIR__ . "/include/MainFooter.php"; ?>
 
-
-
   <!-- ===============>> scrollToTop start here <<================= -->
   <a href="#" class="scrollToTop scrollToTop--style1"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
   <!-- ===============>> scrollToTop ending here <<================= -->
 
   <?php include_once __DIR__ . "/assets/FooterFiles.php"; ?>
 
+  <script>
+    // Function to hide pop-up and clean URL
+    function hidePopup() {
+      document.getElementById('successPopup').classList.remove('show');
+      document.getElementById('popupOverlay').classList.remove('show');
+      // Remove success parameter from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // Check for success query parameter and show pop-up
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      document.getElementById('successPopup').classList.add('show');
+      document.getElementById('popupOverlay').classList.add('show');
+      // Auto-hide after 5 seconds
+      setTimeout(hidePopup, 5000);
+    }
+  </script>
 </body>
 
 </html>
